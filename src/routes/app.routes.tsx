@@ -5,6 +5,7 @@ import { theme } from "../global/styles/theme";
 
 import { Home } from '../screens/Home';
 import { Pokedex } from "../screens/Pokedex";
+import { Details } from "../screens/Details";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -25,6 +26,10 @@ export function AppRoutes() {
             <Screen 
                 name="Home"
                 component={Home}
+            />
+            <Screen 
+                name="Details"
+                component={Details}
             />
             
 

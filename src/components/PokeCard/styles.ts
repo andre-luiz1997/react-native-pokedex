@@ -47,7 +47,8 @@ export const styles = StyleSheet.create({
     },
     badgeContainer: {
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginTop: 50
     },
     badge: {
         paddingVertical: 10,

@@ -1,13 +1,7 @@
 
 import { typeColors } from "../global/styles/theme";
 
-export async function fetchColors(types: {
-    slot: string, 
-    type: {
-        name: string, 
-        url: string
-    } 
-}[]){
+export async function fetchColors(types: any[]){
     let colors = [];
     types.map((type) => { 
         const name = type.type.name;
