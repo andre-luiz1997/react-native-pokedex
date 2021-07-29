@@ -3,6 +3,8 @@ export const theme = {
         blue1: '#6E95FD',
         blue2: '#6FDEFA',
 
+        pink1: '#fd10d3',
+
         green1: '#8DE061',
         green2: '#51E85E',
 

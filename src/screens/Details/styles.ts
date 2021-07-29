@@ -71,4 +71,45 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 24,
         alignItems: 'flex-start'
     },
+    navigator: {
+        marginTop: 50,
+        marginHorizontal: 24
+    },
+    tab: {
+        marginHorizontal: 24,
+    },
+    tabLabel: {
+        textTransform: 'capitalize',
+        fontFamily: theme.fonts.heading400
+    },
+    tabIndicator: {
+        backgroundColor: theme.colors.black1
+    },
+    tabSceneContainer: {
+        backgroundColor: theme.colors.white1
+    },
+    genderLabel: {
+        fontFamily: theme.fonts.heading400,
+        color: theme.colors.black1,
+        marginLeft:5
+    },
+    row: {
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'row',
+        alignContent: 'center',
+        justifyContent: 'flex-start'
+    },
+    col: {
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    screenHeader: {
+        color: theme.colors.black1,
+        fontFamily: theme.fonts.heading700,
+        marginTop: 15,
+        marginBottom: 5
+    }
 });

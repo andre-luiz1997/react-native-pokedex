@@ -18,6 +18,13 @@ export type PokemonProps = {
     name: string;
     sprites: string[];
     types: string[];
+    abilities: string[];
+    base_experience: number;
+    height: number;
+    weight: number;
+    moves: string[];
+    species: string[];
+    stats: string[];
 }
 
 type Props = {
@@ -32,12 +39,25 @@ export function PokeCard({data}: Props){
 
     async function fetchPokemon(){
         const response = await api.get(`/pokemon/${data.name}`);
-        setPokemon(response.data);
-        setLoading(false);
+        return response.data;
+    }
+
+    async function fetchTypes(){
+        const response = await fetchColors(pokemon.types);
+        setTypes(response);
     }
     
     useEffect(() => {
-        fetchPokemon();
+        let isMounted = true;
+        fetchPokemon().then(data => {
+            if(isMounted){
+                setPokemon(data);
+                setLoading(false);
+            }
+        });
+        return (() => {
+            isMounted = false;
+        });
     }, []);
 
     useEffect(() => {
@@ -46,20 +66,8 @@ export function PokeCard({data}: Props){
         } 
     }, [pokemon]);
 
-    async function fetchTypes(){
-        const response = await fetchColors(pokemon.types);
-        setTypes(response);
-    }
-
-    async function handlePokemonDetails(pokemon: PokemonProps){
-        const data = {
-            id: pokemon.id,
-            name: pokemon.name,
-            sprites: pokemon.sprites,
-            types: pokemon.types
-        }
-
-        navigator.navigate('Details', {data});
+    function handlePokemonDetails(pokemon: PokemonProps){
+        navigator.navigate('Details', {pokemon});
     }
 
     return (
